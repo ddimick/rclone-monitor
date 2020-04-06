@@ -50,7 +50,7 @@ def rclone(cmd):
         if line.strip().startswith('*'):
           line = line.split(':')
           line = line[2].split(',')
-          logging.info('Status:     %s completed (%s) at %s %s' % (line[0].strip(), line[1].strip(), line[2].strip(), line[3].strip()))
+          logging.info('Status:     "%s": %s completed (%s) at %s %s' % (cmd[2], line[0].strip(), line[1].strip(), line[2].strip(), line[3].strip()))
 
       for line in process.stderr:
         logging.error(line)
